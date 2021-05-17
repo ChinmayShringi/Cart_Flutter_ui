@@ -1,4 +1,4 @@
-import 'package:cart/cart.v1/cart_view.dart';
+import 'package:cart/cart/prod_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,10 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'Flutter Cart',
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
