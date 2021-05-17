@@ -1,4 +1,4 @@
-import 'package:cart/cart_view1.dart';
+import 'package:cart/cart.v1/cart_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
