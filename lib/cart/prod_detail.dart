@@ -12,6 +12,7 @@ class ProductDetailsPage extends StatefulWidget {
 }
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
+  var quant = 1;
   var selectedCard = 'WEIGHT';
   var color = [Colors.white38, Colors.white54, Colors.white60, Colors.white70];
   @override
@@ -76,11 +77,21 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(widget.foodName,
-                      style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.bold)),
+                  Row(
+                    children: <Widget>[
+                      Text(widget.foodName.split(' ')[0],
+                          style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 22.0,
+                              fontWeight: FontWeight.bold)),
+                      SizedBox(width: 10.0),
+                      Text(widget.foodName.split(' ')[1],
+                          style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 22.0,
+                          ))
+                    ],
+                  ),
                   SizedBox(height: 20.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -101,7 +112,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                setState(() {
+                                  if (this.quant > 1) {
+                                    this.quant -= 1;
+                                  }
+                                });
+                              },
                               child: Container(
                                 height: 25.0,
                                 width: 25.0,
@@ -112,18 +129,22 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                   child: Icon(
                                     Icons.remove,
                                     color: Colors.white,
-                                    size: 20.0,
+                                    size: 12.0,
                                   ),
                                 ),
                               ),
                             ),
-                            Text('2',
+                            Text(quant.toString(),
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontFamily: 'Montserrat',
                                     fontSize: 15.0)),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                setState(() {
+                                  this.quant += 1;
+                                });
+                              },
                               child: Container(
                                 height: 25.0,
                                 width: 25.0,
@@ -134,7 +155,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                   child: Icon(
                                     Icons.add,
                                     color: Color(0xFF7A9BEE),
-                                    size: 20.0,
+                                    size: 15.0,
                                   ),
                                 ),
                               ),
@@ -144,7 +165,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       )
                     ],
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 50.0),
                   Container(
                       height: 150.0,
                       child: ListView(
@@ -160,7 +181,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                         ],
                       )),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height / 8,
+                    height: MediaQuery.of(context).size.height / 15,
                   ),
                   Padding(
                     padding: EdgeInsets.only(bottom: 0),
@@ -173,7 +194,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                 bottomLeft: Radius.circular(25.0),
                                 bottomRight: Radius.circular(25.0)),
                             color: Colors.black),
-                        height: 50.0,
+                        height: 60.0,
                         width: MediaQuery.of(context).size.width,
                         child: Column(
                           children: [
@@ -188,7 +209,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                 Container(
                                   padding: EdgeInsets.only(
                                       left: MediaQuery.of(context).size.width /
-                                          8),
+                                          7.5),
                                   child: Text(
                                     '\$52.00',
                                     style: TextStyle(

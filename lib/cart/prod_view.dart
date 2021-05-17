@@ -11,7 +11,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF21BFBD),
+      backgroundColor: Color.fromRGBO(11, 194, 191, 1),
       body: ListView(
         children: <Widget>[
           Padding(
@@ -81,13 +81,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: MediaQuery.of(context).size.height / 1.7,
                     child: ListView(children: [
                       _buildFoodItem(
-                          'assets/plate1.png', 'Salmon bowl', '\$24.00'),
+                          'assets/plate1.png', 'Salmon Bowl', '\$24.00'),
+                      SizedBox(
+                        height: 20,
+                      ),
                       _buildFoodItem(
-                          'assets/plate2.png', 'Spring bowl', '\$22.00'),
+                          'assets/plate2.png', 'Spring Bowl', '\$22.00'),
+                      SizedBox(
+                        height: 20,
+                      ),
                       _buildFoodItem(
-                          'assets/plate6.png', 'Avocado bowl', '\$26.00'),
+                          'assets/plate6.png', 'Avocado Bowl', '\$26.00'),
+                      SizedBox(
+                        height: 20,
+                      ),
                       _buildFoodItem(
-                          'assets/plate5.png', 'Berry bowl', '\$24.00')
+                          'assets/plate5.png', 'Berry Bowl', '\$24.00')
                     ]),
                   ),
                 ),
@@ -185,9 +194,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Image(
                           image: AssetImage(imgPath),
                           fit: BoxFit.cover,
-                          height: 75.0,
-                          width: 75.0)),
-                  SizedBox(width: 10.0),
+                          height: 80.0,
+                          width: 80.0)),
+                  SizedBox(width: 20.0),
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
