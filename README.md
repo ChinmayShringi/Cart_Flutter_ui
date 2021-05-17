@@ -1,4 +1,4 @@
-# cart
+# Cart
 
 A new Flutter project.
 
