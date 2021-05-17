@@ -8,6 +8,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int i = 0;
+  var img = [
+    'assets/plate1.png',
+    'assets/plate2.png',
+    'assets/plate6.png',
+    'assets/plate5.png',
+  ];
+  var title = ['Salmon Bowl', 'Spring Bowl', 'Avocado Bowl', 'Berry Bowl'];
+  var prices = ['\$24.00', '\$22.00', '\$26.00', '\$24.00'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,27 +87,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(
                   padding: EdgeInsets.only(top: 45.0),
                   child: Container(
-                    height: MediaQuery.of(context).size.height / 1.7,
-                    child: ListView(children: [
-                      _buildFoodItem(
-                          'assets/plate1.png', 'Salmon Bowl', '\$24.00'),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      _buildFoodItem(
-                          'assets/plate2.png', 'Spring Bowl', '\$22.00'),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      _buildFoodItem(
-                          'assets/plate6.png', 'Avocado Bowl', '\$26.00'),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      _buildFoodItem(
-                          'assets/plate5.png', 'Berry Bowl', '\$24.00')
-                    ]),
-                  ),
+                      height: MediaQuery.of(context).size.height / 1.7,
+                      child: ListView.separated(
+                          separatorBuilder: (context, index) => SizedBox(
+                                height: 20,
+                              ),
+                          itemCount: this.img.length,
+                          itemBuilder: (context, index) {
+                            return _buildFoodItem(
+                                img[index], title[index], prices[index]);
+                          })),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
