@@ -4,11 +4,11 @@ A Flutter template.
 
 
 ## Product List
-![Alt text](assets/ss1.png "Product List")
+<img src="assets/ss1.png" width="200" height="400"/>
 
 
 ## Product Details
-![Alt text](assets/ss2.png "Product Details")
+<img src="assets/ss2.png" width="200" height="400"/>
 
 ## Getting Started
 
