@@ -1,4 +1,4 @@
-# Cart
+# Cart Flutter Template
 
 A Flutter template. <a href="https://dribbble.com/shots/6687016-Foody-Food-by-Subscription">Inspiration</a>
 
